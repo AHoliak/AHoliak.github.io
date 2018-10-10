@@ -1,0 +1,68 @@
+body
+{
+    background-color:paleturquoise;
+}
+
+h1
+{
+    color:navy; text-align: center; font-style:oblique;
+}
+
+h2
+{
+    color:teal; text-align: center; font-style: oblique;
+}
+
+article p::first-letter
+{
+    font-size: 2em; color:mediumorchid;
+}
+table, td 
+{
+    background-color: cyan; border: 1px solid black; text-align: center; font-weight: bold; color: black; border-collapse: collapse;
+}
+.words { color:red;}
+a.wow:link {color: red;}
+a.wow:visited {color:white;}
+
+
+
+    @keyframes colors
+    {
+from {background: cyan;}
+to {background: green;}
+    }
+
+#colors
+    {
+    background-color:green;
+    animation: colors 10s;
+    animation-name: colors;animation-direction:alternate;
+    }
+
+
+    @keyframes text1 
+    {
+    from {color: black; }
+    to {color: white;}
+    }
+
+#text
+
+    {
+    color:white;
+    animation: text1 10s;
+    animation-name: text1;animation-direction:alternate;
+    }
+
+    @keyframes move 
+    {
+    from {left:0;}
+    to {left: calc(100% - 200px);}
+    }
+
+#banner
+    {
+    width: 200px; height: 55px;
+    background-color: salmon; animation: move 80s alternate infinite; position: relative; text-align:center; color: navy; font-weight: bold;
+    }
