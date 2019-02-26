@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Homework 3 - Functions">
+  <meta name="description" content="Math.random">
+  <meta name="author" content="Anastasiia Holiak">
+  <link rel="stylesheet" href="hw2parts.css">
+  <title>Functions</title>
+ <script>
+		var num1, num2;
+
+		function generateNumbers()
+		{
+			num1 = Math.floor((Math.random()*10)); 
+			num2 = Math.floor((Math.random()*10));
+
+			document.getElementById("question").innerHTML = "<td  colspan='2'> How much is " + num1 + " times " + num2 + "?</td>"; 
+		}
+
+		function process()
+		{	
+			var theAnswer, myAnswer;
+
+			theAnswer = num1 * num2;
+			myAnswer = document.getElementById("answer").value;
+
+			if(isNaN(myAnswer))
+			{
+				document.getElementById("result").innerHTML = "<td colspan='2'>Invalid Input. Please input a numeric value.</td>";
+				document.getElementById("answer").value = "";
+			}
+			else 
+			{
+				myAnswer = parseInt(myAnswer, 10);
+			
+				if (myAnswer == theAnswer)
+				{
+					document.getElementById("result").innerHTML = "<td  colspan='2'>Very good!</td>";
+					document.getElementById("answer").value = "";
+
+					generateNumbers();
+				}
+				else 
+				{
+					document.getElementById("result").innerHTML = "<td colspan='2'>No. Please try again.</td>";
+					document.getElementById("answer").value = "";
+				}
+			}
+		}
+	</script>
+    </head>
+    <body onload="generateNumbers()">
+  <nav id="nav">
+    <ul>
+      <li><a href="hw3.html">HW3</a></li>
+	  <li><a href="part1-2.html">Part 1</a></li>
+      <li><a href="part2-2.html">Part 2</a></li>
+      <li><a href="part3-2.html">Part 3</a></li>
+      <li><a href="part4-2.html">Part 4</a></li>
+    </ul>
+  </nav>
+        <h3>Check yourself !</h3>
+        <div>
+			<form id="myForm" name="myForm">
+				<table class="center">
+					<tr><td colspan="2" id="question"></td></tr>
+					<tr>
+						<td>Your answer:</td>
+						<td><input type="text" id="answer" name="answer"></td>
+					</tr>
+					<tr class="button">
+						<td colspan="2">
+							<input type="button" onclick="process()" value="Guess">
+						</td>
+					</tr>
+					<tr><td colspan="2" id="result"></td></tr>
+				</table>
+			</form>
+			
+		</div>
+        <footer class="copy"><p>&copy; Anastasiia Holiak</p></footer>
+    </body>
+    
+</html>
