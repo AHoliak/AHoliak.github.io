@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Homework 3 - Functions">
+  <meta name="description" content="Convert Fahrenheit to Celsius and Celsius to Fahrenheit">
+  <meta name="author" content="Anastasiia Holiak">
+  <title>Functions</title>
+  <link rel="stylesheet" href="hw2parts.css">
+  <script>	
+    $(document).ready(function(){
+	
+    });
+
+    function Celsius(degreeF){
+	var temp = 5/9 * (degreeF - 32);
+	return temp;
+}
+
+    function Fahrenheit(degreeC){
+	var temp = (9/5 * degreeC) + 32;
+	return temp;
+}
+
+    function Calculate() {
+	var temp;
+	var fahrenheit = document.myForm.fahrenheit.value;
+	var celsius = document.myForm.celsius.value;
+	var fText = document.getElementById("fahrenheit");
+	var cText = document.getElementById("celsius");
+	
+	if ((fahrenheit == "Fahrenheit" && celsius == "Celsius") || (fahrenheit != "Fahrenheit" && celsius != "Celsius")){
+		alert("Please enter a valid temperature for either Fahrenheit or Celsius.");
+		fText.value = ("Fahrenheit");
+		cText.value = ("Celsius");
+	} else if ((isNaN(fahrenheit) && (celsius == "Celsius")) || (fahrenheit == "Fahrenheit") && isNaN(celsius)){
+		alert("Please enter a numeric temperature.");
+		fText.value = ("Fahrenheit");
+		cText.value = ("Celsius");
+	} else {
+		if (fahrenheit != "Fahrenheit"){
+			cText.value = Celsius(fahrenheit) + " Degrees Celsius";
+		} else {
+			fText.value = Fahrenheit(celsius) + " Degrees Fahrenheit";
+		}
+	}
+}
+
+function Reset(){
+	var fText = document.getElementById("fahrenheit");
+	var cText = document.getElementById("celsius");
+	
+	fText.value = ("Fahrenheit");
+	cText.value = ("Celsius");
+}
+</script>
+    </head>
+<body>
+      <nav id="nav">
+        <ul>
+          <li><a href="hw3.html">HW3</a></li>
+	      <li><a href="part1-2.html">Part 1</a></li>
+          <li><a href="part2-2.html">Part 2</a></li>
+          <li><a href="part3-2.html">Part 3</a></li>
+          <li><a href="part4-2.html">Part 4</a></li>
+        </ul>
+      </nav>
+    <form name="myForm">
+      <table class="center">
+          <tr>
+            <td>Enter a tepmerature in<br>Fahrenheit(F&#176;) or Celsius(C&#176;) and press "Convert:"
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" id="fahrenheit" size="40" name="fahrenheit" onClick="this.select();" value="Fahrenheit">
+            </td>
+          </tr>
+          <tr>
+            <td><input type="button" onclick="Calculate()" value="Convert"> </td>
+          </tr>
+          <tr>
+            <td><input type="text" id="celsius" size="40" name="celsius" onClick="this.select();" value="Celsius"></td>
+          </tr> 
+             <tr>
+                <td><input type="button" onclick="Reset()" value="Reset"></td>
+            </tr>
+      </table>
+    </form>
+    <footer class="copy"><p>&copy; Anastasiia Holiak</p></footer>
+    </body>
+</html>
