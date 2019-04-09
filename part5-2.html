@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Homework 5 - Arrays">
+  <meta name="description" content="Arrays">
+  <meta name="author" content="Anastasiia Holiak">
+  <title> Arrays </title>
+  <link rel="stylesheet" href="hw2parts.css">
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script>	
+  $(document).ready(function(){
+	
+  });
+
+  function Visit() {
+	window.location.href=$('#onClick').val();
+	
+  }
+</script>
+</head>
+<body>
+  <nav id="nav">
+    <ul>
+	  <li><a href="part5-1.html">Part 1</a></li>
+      <li><a href="part5-2.html">Part 2</a></li>
+      <li><a href="part5-3.html">Part 3</a></li>
+    </ul>
+  </nav>
+<h1> Choose your Social Network: </h1>
+    <div>
+         <form name="inputForm">
+         Change the pulldown to visit the Social Network:<br><br>
+         <select id="onChange" onchange="window.location.href=this.value;">   
+         	<option value="">Choose a link</option>         
+            <option value="https://www.facebook.com">Facebook</option>
+			<option value="https://www.instagram.com">Instagram</option>
+            <option value="https://vk.com">VK</option>
+         </select>
+         <br><br>
+         How about Messengers?
+         Choose a link then press 'Go' to procced:<br><br>
+         <select id="onClick">   
+         	<option value="">Choose one of the following:</option>         
+            <option value="https://www.whatsapp.com/"> Whatsapp</option>
+            <option value="https://www.snapchat.com"> Snapchat</option>
+			<option value="https://telegram.org/"> Telegram</option>
+         </select>
+         	<input type="button" onclick="Visit()" value="GO!"><br />
+        </form><br><br>
+         
+    </div>
+    
+  <footer class="copy"><p>&copy; Anastasiia Holiak</p></footer>
+</body>
+</html>
