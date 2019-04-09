@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Homework 5 - Arrays">
+  <meta name="description" content="Arrays">
+  <meta name="author" content="Anastasiia Holiak">
+  <link rel="stylesheet" href="hw2parts.css">
+    <title>Arrays</title>
+    <script>
+		var state = new Array();
+		state[0] = new Array("AL","AK","AZ","AR","CA","CO");
+		state[1] = new Array("Alabama","Alaska","Arizona","Arkansas","California","Colorado");
+		state[2] = new Array("Montgomery","Juneau","Phoenix","Little Rock","Sacramento","Denver");
+		state[3] = new Array("4,369,862","619,500","4,778,332","2,551,373","3,145,121","4,056,133");
+
+		function stateArray(request)
+		{
+			for (var i = 0; i < state[0].length; i++)
+			{
+				if (state[0][i] == request.toUpperCase())
+				{
+					return i;
+				}
+			}
+			for (var i = 0; i < state[1].length; i++)
+			{
+				if (state[1][i].toUpperCase() == request.toUpperCase())
+				{
+					return i;
+				}
+			}
+
+			return -1;
+		}
+
+		function validate()
+		{
+			var request = document.getElementById("request").value;
+			var index = stateArray(request);
+
+			if (request == "")
+			{
+				document.getElementById("result").innerHTML = "<td colspan='2' class='errorMsg'>Please enter a State.</td>";
+			}
+			else if (index == -1)
+			{
+				document.getElementById("result").innerHTML = "<td colspan='2'>This state is not available.</td>";
+			}
+			else 
+			{
+				document.getElementById("result").innerHTML = "<td>State Abbr:<br> State Name:<br> Capital:<br> Population:</td><td>" + state[0][index]  + "<br>" + state[1][index]  + "<br>" + state[2][index]  + "<br>" + state[3][index]  + "</td>";
+			}
+		}
+
+	</script>
+</head>
+<body>
+  <nav id="nav">
+    <ul>
+	  <li><a href="part5-1.html">Part 1</a></li>
+      <li><a href="part5-2.html">Part 2</a></li>
+      <li><a href="patr5-3.html">Part 3</a></li>
+    </ul>
+  </nav>
+  <div>
+  <div>
+    <p>Enter a state abbreviation or name (not case sensitive):</p>
+  </div>
+  <form>
+	<table class="center">
+      <tr>
+		<td><input type="text" name="request" id="request" size="15"></td>
+		<td>
+		  <input type="button" value="Submit" onclick="validate();">
+          <input type="reset" value="Reset" onclick="location.reload();">
+		</td>
+	  </tr>
+      <tr><td id="result" colspan="2"></td></tr>
+    </table>
+    </form>
+  </div>
+    <footer class="copy"><p>&copy; Anastasiia Holiak</p></footer>
+    </body>
+</html>

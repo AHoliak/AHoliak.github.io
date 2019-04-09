@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Homework 5 - Arrays">
+  <meta name="description" content="Arrays">
+  <meta name="author" content="Anastasiia Holiak">
+  <link rel="stylesheet" href="hw2parts.css">
+    <script>
+		function validate()
+		{
+			var valid = true;
+			//var errorMessage = "";
+
+			if (document.myform.name.value == "")
+			{
+				document.getElementById("errorName").innerHTML = "<td colspan='2'><p class='errorMsg'>Please enter your name.</p><p class='errorMsg'></p></td>";
+				valid = false;
+			}
+
+			if ((!document.myform.type[0].checked) && (!document.myform.type[1].checked) && (!document.myform.type[2].checked))
+			{
+				document.getElementById("errorType").innerHTML = "<td colspan='2'><p class='errorMsg'>Please select your type.</p><p class='errorMsg'></p></td>";
+				valid = false;
+			}
+
+			if ((!document.myform.period[0].checked) && (!document.myform.period[1].checked) && (!document.myform.period[2].checked))
+			{
+				document.getElementById("errorPeriod").innerHTML = "<td colspan='2'><p class='errorMsg'>Please select the frequency of your vacations.</p><p class='errorMsg'></p></td>";
+				valid = false;
+			}
+
+			if (document.getElementById("age").value == "select")
+			{
+				document.getElementById("errorAge").innerHTML = "<td colspan='2'><p class='errorMsg'> Please select your age category.</p><p class='errorMsg'></p></td>";
+				valid = false;
+			}
+
+			return valid;
+		}
+	</script>
+    <title>Arrays</title>
+</head>
+<body>
+  <nav id="nav">
+    <ul>
+      <li><a href="part5-1.html">Part 1</a></li>
+      <li><a href="part5-2.html">Part 2</a></li>
+      <li><a href="patr5-3.html">Part 3</a></li>
+    </ul>
+  </nav>
+  <h1> What is your vacation style?</h1>
+  <div>
+	<form name="myform" method="POST" action="mailto:aholiak@mail.ccsf.edu" onSubmit="return validate();">
+	<table class="center">
+	  <tr>
+	    <th colspan="2"> Please complete all fields before submitting.</th>
+      </tr>
+      <tr>
+		<td>Name: </td>
+		<td><input type="text" name="name" id="name"></td>
+      </tr>
+      <tr>
+        <td> Frequency: </td>
+          <td>
+          <input type="radio" name="period" value="a"> once a year<br>
+          <input type="radio" name="period" value="b"> 2-3 times a year<br>
+          <input type="radio" name="period" value="c"> 4 or more<br>
+         </td>
+      </tr>
+	  <tr>
+		<td> Vacation type: </td>
+		<td>
+		  <input type="checkbox" name="type" value="Sea"> Sealover<br>
+          <input type="checkbox" name="type" value="Mountains"> Mountains adventurer<br>
+          <input type="checkbox" name="type" value="Spa Resort"> Spa relaxer
+		</td>
+      </tr>
+      <tr>
+		<td>Your age: </td>
+		<td>
+          <select name="age" id="age">
+		    <option value="select">Please Select:</option>
+		    <option value=">18"> >18 </option>
+		    <option value="18-21"> 18-21 </option>
+		    <option value="22-25"> 22-25 </option>
+		    <option value="26-30"> 26-30 </option>
+		    <option value="30+"> 30+</option>
+          </select>
+         </td>
+		</tr>
+		<tr>
+		  <td colspan="2" class="submitButton"><input type="submit" value="Submit"></td>
+		</tr>
+        <tr>
+            <th id="errorName" colspan="2"> </th>
+        </tr>
+        <tr>
+            <th id="errorType" colspan="2"> </th>
+        </tr>
+		<tr>
+            <th  id="errorPeriod" colspan="2"> </th>
+        </tr>
+		<tr>
+            <th  id="errorAge" colspan="2"> </th>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <footer class="copy"><p>&copy; Anastasiia Holiak</p></footer>
+</body>
+</html>
