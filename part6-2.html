@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Homework 6 - Objects">
+  <meta name="description" content="Objects">
+  <meta name="author" content="Anastasiia Holiak">
+  <link rel="stylesheet" href="hw2parts.css">
+  <title>Objects</title>
+    <script>
+		function findCharacter()
+		{
+			var text = document.getElementById("text").value;
+			var character = document.getElementById("character").value;
+			var count = 0;
+
+			if(text === "")
+			{
+				noText();
+			}
+			else if(character === "")
+			{
+				noCharacter();
+			}
+			else
+			{
+				for (var i = 0; i < text.length; i++)
+				{
+					if (character == text.charAt(i))
+					{
+						count++;
+					}
+				}
+
+				if(count === 0)
+				{
+					errorMsg(character);
+				}
+				else
+				{
+					document.getElementById("result").value = "The Character \'" + character + "\' appeared " + count + " time(s) in the string."
+				}
+			}
+		}
+		function errorMsg(character)
+		{
+			var myText = "<html><head><title>Error - Not Found</title>" + "<link rel='stylesheet' type='text/css' href='../css/style.css'></head>" + "<body><div  id='hw6'><p>Character \'" + character + "\' not found in the string entered</p>" + "<input type='button' value='Close Window' onclick='window.close()'></div></body></html>";
+
+			var errorWindow = window.open("","error","width=300,height=100,top=80,left=500");
+
+			errorWindow.focus();
+			errorWindow.document.write(myText);
+			errorWindow.document.close(); 
+		}
+		function noText()
+		{
+			var myText = "<html><head><title>Error - Not Found</title>" + "<link rel='stylesheet' type='text/css' href='../css/style.css'></head>" + "<body><div id='hw6'><p>No text was entered</p>" + "<input type='button' value='Close Window' onclick='window.close()'></div></body></html>";
+
+			var errorWindow = window.open("","no_text","width=300,height=100,top=80,left=500");
+
+			errorWindow.focus();
+			errorWindow.document.write(myText);
+			errorWindow.document.close(); 
+		}
+		function noCharacter()
+		{
+			var myText = "<html><head><title>Error - Not Found</title>" + "<link rel='stylesheet' type='text/css' href='../css/style.css'></head>" + "<body><div  id='hw6'><p>No character was entered</p><input type='button' value='Close Window' onclick='window.close()'></div></body></html>";
+
+			var errorWindow = window.open("","no_character","width=300,height=100,top=80,left=500");
+
+			errorWindow.focus();
+			errorWindow.document.write(myText);
+			errorWindow.document.close(); 
+		}
+	</script>
+    <style> 
+        table {width:20%; 
+               margin-left:40%; 
+               margin-right:40%;}
+    </style>
+</head>
+
+<body>
+<nav id="nav">
+    <ul>
+	  <li><a href="part6-1.html">Part 1</a></li>
+      <li><a href="part6-2.html">Part 2</a></li>
+      <li><a href="part6-3.html">Part 3</a></li>
+    </ul>
+  </nav>
+    <div>
+	  <form>
+		<table>
+          <tr>
+			<td colspan="4">
+              <textarea id="text" rows="5" cols="34" placeholder="Insert lines of text here."></textarea>
+            </td>
+           </tr>
+           <tr>
+			 <td>Character:</td>
+             <td><input type="text" id="character" size="2"></td>
+             <td><input type="button" value="Search" onclick="findCharacter();"></td>
+             <td><input type="reset" value="Reset" onclick="location.reload();"></td>
+           </tr>
+           <tr>
+			 <td colspan="4">
+			  <textarea id="result" rows="3" cols="34"></textarea>
+			 </td>
+           </tr>
+	     </table>
+	  </form>
+	</div>
+    </body>
+</html>

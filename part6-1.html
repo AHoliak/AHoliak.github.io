@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Homework 6 - Objects">
+  <meta name="description" content="Objects">
+  <meta name="author" content="Anastasiia Holiak">
+  <link rel="stylesheet" href="hw2parts.css">
+  <title>Objects</title>
+  <script>
+		function rounding()
+		{
+			var number = document.getElementById("num").value;
+			var error = "<td colspan='2' class='errorMsg'>Invalid Input! <br> Make sure that number has AT LEAST 4 decimal positions.</td>";
+
+			if(isNaN(number) || number == "" || number)
+			{
+				document.getElementById("error").innerHTML = error;
+				document.getElementById("result").value = "";
+			}
+			else
+			{
+				document.getElementById("error").innerHTML = "";
+                number = parseFloat(number);
+                document.getElementById("result").value =  "Number: " + number 
+				+ "\n\nRounded to:" 
+				+ "\nInteger: " + roundToInteger(number) 
+				+ "\nTenths: " + roundToTenths(number) 
+				+ "\nHundredths: " + roundToHundredths(number) 
+				+ "\nThousandths: " + roundToThousandths(number);
+	       }   
+        }
+
+		function roundToInteger(number)
+		{
+			return Math.floor(number + .5);
+		}
+		
+		function roundToTenths(number)
+		{
+			return Math.floor(number * 10 + .5)/10;
+		}
+
+		function roundToHundredths(number)
+		{
+			return Math.floor(number * 100 + .5)/100;
+		}
+
+		function roundToThousandths(number)
+		{
+			return Math.floor(number* 1000 + .5)/1000;
+		}
+	</script>
+  
+</head>
+<body>
+<nav id="nav">
+    <ul>
+	  <li><a href="part6-1.html">Part 1</a></li>
+      <li><a href="part6-2.html">Part 2</a></li>
+      <li><a href="part6-3.html">Part 3</a></li>
+    </ul>
+  </nav>
+  <h1> Math.round, Math.sqrt and Math.floor, toFixed() </h1>
+ <div>
+	<form>
+      <table class = "center">
+		<tr>
+          <td>Enter a Number: </td>
+          <td><input type="text" name="num" id="num"></td>
+         </tr>
+         <tr>
+           <td colspan="2"><textarea id="result" rows="8" cols="34"></textarea></td>
+         </tr>
+         <tr>
+			<td colspan="2" class="button">
+				<input type="button" value="Submit" onclick="rounding();">
+				<input type="reset" value="Reset" onclick="location.reload();">
+			</td>
+		 </tr>
+         <tr>
+           <td id="error" colspan="2"></td></tr>
+      </table>
+	</form>
+  </div>
+<footer class="copy"><p>&copy; Anastasiia Holiak</p></footer>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Homework 6 - Objects">
+  <meta name="description" content="Objects">
+  <meta name="author" content="Anastasiia Holiak">
+  <link rel="stylesheet" href="hw2parts.css">
+  <title>Objects</title>
+    
+	<script>
+		function dates()
+		{
+			var d = new Date();
+
+			document.getElementById("date1").innerHTML = d.toString();
+			document.getElementById("date2").innerHTML = d.toLocaleString();
+			document.getElementById("date3").innerHTML = d.toUTCString();
+			document.getElementById("dateDifference").innerHTML = "The difference between EST and UTC is " + (d.getTimezoneOffset()/60 - 3) + " hours.";
+		}
+
+		function phoneNumbers()
+		{
+			var phoneNumber = document.getElementById("phone").value;
+			var phoneRegExp = /^(\(\d{3}\))(\s)(\d{3})(-\d{4})$/;
+			var phoneParts;
+			var error = "<td colspan='2' class='errorMsg'>Invalid Input!</td>";
+
+			if(!phoneRegExp.test(phoneNumber))
+			{
+				document.getElementById("error").innerHTML = error;
+			}
+			else 
+			{
+				document.getElementById("error").innerHTML = "";
+
+				phoneParts = phoneNumber.split(/[\(\)\s-]/);
+
+				document.getElementById("areaCode").innerHTML = phoneParts[1];
+				document.getElementById("firstThree").innerHTML = phoneParts[3];
+				document.getElementById("lastFour").innerHTML = phoneParts[4];
+			}
+		}
+	</script>
+</head>
+
+<body onload="dates();">
+<nav id="nav">
+    <ul>
+	  <li><a href="part6-1.html">Part 1</a></li>
+      <li><a href="part6-2.html">Part 2</a></li>
+      <li><a href="part6-3.html">Part 3</a></li>
+    </ul>
+  </nav>
+    <div>
+	  <table class ="center">
+		<tr>
+		  <th colspan="2">Date Object</th>
+        </tr>
+		<tr>
+		  <td>toString()</td>
+		  <td id="date1"></td>
+		</tr>
+		<tr>
+          <td>toLocaleString()</td>
+          <td id="date2"></td>
+		</tr>
+		<tr>
+          <td>toUTCString()</td>
+          <td id="date3"></td>
+        </tr>
+		<tr>
+		  <td colspan="2" id="dateDifference"></td>
+		</tr>
+      </table>
+        <form>
+          <table class="center">
+			<tr>
+			  <td colspan="2" class="center">Enter a telephone number <br> (###) ###-####:
+              </td>
+			</tr>
+			<tr>
+			  <td><input type="text" id="phone"></td>
+			  <td>
+				<input type="button" value="Split" onclick="phoneNumbers();">
+				<input type="reset" value="Reset" onclick="location.reload();">
+              </td>
+			</tr>
+			<tr>
+			  <td>Area Code: </td>
+              <td id="areaCode"></td>
+			</tr>
+			<tr>
+			  <td>First Three: </td>
+			  <td id="firstThree"></td>
+			</tr>
+			<tr>
+			  <td>Last Four: </td>
+			  <td id="lastFour"></td>
+			</tr>
+			<tr><td id="error" colspan="2"></td></tr>
+		</table>
+     </form>
+  </div>
+<footer class="copy"><p>&copy; Anastasiia Holiak</p></footer>
+</body>
+</html>
+
