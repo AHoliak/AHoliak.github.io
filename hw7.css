@@ -1,0 +1,155 @@
+.hw2-nav {
+	text-align: center;
+	margin-top: 40px;
+}
+.hw2-nav ul li{
+	font-size: 20px;
+	display: inline-block;
+	padding: 0 5px;
+
+}
+.hw2-nav ul li a:hover {
+	color: black;
+}
+.exercise {
+	width: 800px;
+	min-height: 500px;
+	background-color: lightseagreen;
+	border-radius: 10px;
+	margin: 0 auto; 
+	position: relative;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+.button {
+	text-align: right;
+}
+input {
+	text-align: right;
+}
+.right {
+	text-align: right;
+}
+.center {
+	text-align: center;
+}
+#hw7_2 td {
+	text-align: center;
+}
+.blueLight {
+	background-color: #659EC7;
+	width: 800px;
+	min-height: 500px;
+	border-radius: 10px;
+	margin: 0 auto; 
+	position: relative;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+.greenLight {
+	background-color: #00FF99;
+	width: 800px;
+	min-height: 500px;
+	border-radius: 10px;
+	margin: 0 auto; 
+	position: relative;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+.redLight {
+	background-color: #C80000;
+	width: 800px;
+	min-height: 500px;
+	border-radius: 10px;
+	margin: 0 auto; 
+	position: relative;
+	margin-bottom: 20px;
+	padding: 20px; 
+}
+.purpleLight {
+	background-color: #6633CC;
+	width: 800px;
+	min-height: 500px;
+	border-radius: 10px;
+	margin: 0 auto; 
+	position: relative;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+.small
+{
+	font-size: 8px;
+}
+.medium
+{
+	font-size: 14px;
+}
+.large
+{
+	font-size: 28px;
+}
+#text {
+	width: 400px;
+	margin: 0 auto;
+	text-align: center;
+}
+.normal {
+	font-style: normal;
+	font-weight: normal;
+}
+.italic {
+	font-style: italic;
+	font-weight: normal;
+}
+.bold {
+	font-style: normal;
+	font-weight: bold;
+}
+.boldItalic {
+	font-style: italic;
+	font-weight: bold;
+}
+.georgia {
+	font-family: Georgia, Geneva, sans-serif;
+}
+.bookman {
+	font-family: Bookman, serif;
+}
+.verdana {
+	font-family: "Verdana", Monaco, monospace;
+}
+.original {
+	font-family: "Courier New", Courier, monospace;
+}
+.float {
+	float: left;
+}
+#open {
+	padding-right: 100px;
+	cursor: pointer;
+}
+.change {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	text-align: center;
+	padding-top: 40px;
+	margin: 5px;
+}
+#hw7-nav {
+	font-size: 10px;
+	text-align: center;
+}
+#hw7-nav ul, #hw7-nav li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+#hw7-nav a {
+	margin: 0;
+	padding: 0;
+	background-color: #250352;
+}
+#hw7-nav a:hover {
+	background-color: #2C3B63;
+}

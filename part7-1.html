@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Homework 7 - Object Model and Miscellaneous jQuery ">
+  <meta name="description" content="Object Model and Miscellaneous jQuery">
+  <meta name="author" content="Anastasiia Holiak">
+  <link rel="stylesheet" href="hw2parts.css">
+    <link rel="stylesheet" href="hw7.css">
+  <title>Object Model and Miscellaneous jQuery </title>
+    <script>
+		function switchColor(color)
+		{
+			var body = document.getElementById('body');
+			var exercise = document.getElementById('hw7_2');
+			var current = document.getElementById('hw7_2_li');
+
+			if(color == 0)
+			{
+				exercise.className = "blueLight";
+			
+			}
+			else if(color == 1)
+			{
+				
+				exercise.className = "greenLight";
+
+			}
+			else if(color == 2)
+			{
+				exercise.className = "redLight";
+			
+			}
+			else if(color == 3)
+			{
+				exercise.className = "purpleLight";
+			
+			}
+		}
+
+		function switchFontSize()
+		{
+			var size = document.getElementById('text');
+			var mySize = document.getElementById('fontSize').value;
+
+			if(mySize == "small")
+			{
+				size.className = "small";
+			}
+			else if(mySize == "medium")
+			{
+				size.className = "medium"; 
+			}
+			else if(mySize == "large")
+			{
+				size.className = "large";
+			}
+		}
+
+		function switchFontStyle()
+		{
+			var style = document.getElementById('text');
+			var myStyle = document.getElementById('fontStyle').value;
+
+			if(myStyle == "normal")
+			{
+				style.className = "normal";
+			}
+			else if(myStyle == "italic")
+			{
+				style.className = "italic"; 
+			}
+			else if(myStyle == "bold")
+			{
+				style.className = "bold"; 
+			}
+			else if(myStyle == "boldItalic")
+			{
+				style.className = "boldItalic"; 
+			}
+
+		}
+
+		function switchFont(font)
+		{
+			var text = document.getElementById('text');
+
+			if(font == 0)
+			{
+				text.className = "bookman";
+			}
+			else if(font == 1)
+			{
+				text.className = "georgia";
+			}
+			else if(font == 2)
+			{
+				text.className = "verdana";
+			}
+			else if(font == 3)
+			{
+				text.className = "original";
+			}
+		}
+	</script>
+
+</head>
+<body id="body">
+<nav id="nav">
+    <ul>
+	  <li><a href="part7-1.html">Part 1</a></li>
+      <li><a href="part7-2.html">Part 2</a></li>
+      <li><a href="part7-3.html">Part 3</a></li>
+    </ul>
+  </nav>
+    <div class="exercise" id="hw7_2">
+		<form>
+		  <table>
+			<tr>
+			  <td><input type="radio" name="color" onclick="switchColor(0);">Blue</td>
+			  <td><input type="radio" name="color" onclick="switchColor(1);">Green</td>
+              <td><input type="radio" name="color" onclick="switchColor(2);">Red</td>
+              <td><input type="radio" name="color" onclick="switchColor(3);">Purple</td>
+			</tr>
+			<tr>
+			<td colspan="2">
+			  <select name="fontSize" id="fontSize" onchange="switchFontSize();">
+			  <option value="" selected="selected">
+										Choose a font size
+              </option>
+              <option value="small">8px</option>
+              <option value="medium">14px</option>
+              <option value="large">28px</option>
+              </select>
+             </td>
+			 <td colspan="2">
+				<select name="fontStyle" id="fontStyle" onchange="switchFontStyle();">
+				  <option value="" selected="selected">
+										Choose a font style/weight
+				  </option>
+				  <option value="normal">normal</option>
+				  <option value="italic">italic</option>
+				  <option value="bold">bold</option>
+				  <option value="boldItalic">boldItalic</option>
+				</select>
+              </td>
+			 </tr>
+			 <tr>
+               <td><input type="button" value="Bookman" onclick="switchFont(0);"></td>
+               <td><input type="button" value="Verdana" onclick="switchFont(1);"></td>
+               <td><input type="button" value="Georgia font" onclick="switchFont(2);"></td>
+               <td><input type="button" value="Change back to original font" onclick="switchFont(3);"></td>
+			 </tr>
+          </table>
+        </form>
+    <div id="text">
+	<p>“The truth." Dumbledore sighed.<br>"It is a beautiful and terrible thing, and should therefore be treated with great caution.”<br>
+     ― J.K. Rowling, Harry Potter and the Sorcerer's Stone
+    </div>
+  </div>
+<footer class="copy"><p>&copy; Anastasiia Holiak</p></footer>
+</body>
+</html>
