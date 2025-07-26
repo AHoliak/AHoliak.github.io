@@ -1,6 +1,22 @@
+name: Run Python tests
+
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Dummy test step
+        run: echo "Hello from GitHub Actions!"
