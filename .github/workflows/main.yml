@@ -18,5 +18,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Dummy test step
-        run: echo "Hello from GitHub Actions!"
+      - name: Run tests
+        run: |
+          python -m unittest discover
+
